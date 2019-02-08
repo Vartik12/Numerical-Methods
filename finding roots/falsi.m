@@ -3,8 +3,8 @@ clc;
 f=input('input a function ');
 a=input('enter starting point ');
 b=input('enter ending point ');
-c=(a+b)/2;
-e=0.0000000000000001;
+c=(a*f(b) - b*f(a))/(f(b)-f(a));
+e=0.000001;
 while(abs(f(c)) > e)
     if(f(a)*f(c)<0)
         b=c;    
@@ -12,6 +12,6 @@ while(abs(f(c)) > e)
             a=c;
         end
     end
-   c=(a+b)/2;
+   c=(a*f(b) - b*f(a))/(f(b)-f(a));
 end
 fprintf('the root is : %f \n' , c);

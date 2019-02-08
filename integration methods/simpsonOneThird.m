@@ -10,8 +10,8 @@ for i = 0:n
     if(i==0 || i==n)
         answer = answer+f(a);
     else if(mod(i,2)==0)
-            answer = answer+(4*f(a));
-        else answer = answer+(2*f(a));
+            answer = answer+(2*f(a));
+        else answer = answer+(4*f(a));
         end
     end
     a=a+h;
