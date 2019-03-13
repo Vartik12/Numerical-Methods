@@ -21,14 +21,17 @@ for(i=1:(n-1))
     end
 end
 
-X=zeros(n+1 , 1);
-for(i=n:-1:1)
-    X(i) = (C(i,4)-(C(i,:)*X))/C(i,i);
+for(i=n:-1:2)
+    for(j=(i-1):-1:1)
+        C(j,:) = C(j,:) - ( C(j,i) / C(i,i) )*C(i,:);
+    end
 end
 
 for(i=1:n)
-    fprintf('x%d = %f\n',i,X(i));
+    x=C(i,n+1)/C(i,i);
+    fprintf('x%d = %f\n',i,x);
 end
+
 
 
 

@@ -3,16 +3,19 @@ clc;
 
 n = input('enter the order of n of nxn matrix ');
 A = input('enter the coefficient matrix of order nxn ');
-B = input('enter the matrix B of order nx1 ');
+B = eye(n);
 C = [];
 i=0;
 j=0;
 
 for(i=1:n)
-    for(j=1:n)
-      C(i,j) = A(i,j);  
+    for(j=1:2*n)
+        if(j<n || j==n )
+      C(i,j) = A(i,j);
+        else 
+            C(i,j) = B(i,j-n);
+        end
     end
-    C(i,j+1)=B(i);
 end
 
 for(i=1:(n-1))
@@ -28,10 +31,11 @@ for(i=n:-1:2)
 end
 
 for(i=1:n)
-    x=C(i,4)/C(i,i);
-    fprintf('x%d = %f\n',i,x);
+    C(i,:)=C(i,:)/C(i,i);
+    B(i,:) = C(i, (n+1 : 2*n) );
 end
-
+fprintf('inverse of given matrix is: \n');
+disp(B);
 
 
 
