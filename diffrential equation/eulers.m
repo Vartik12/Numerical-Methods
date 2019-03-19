@@ -12,7 +12,8 @@ n = (x-x0)/h;
 for(i=1:n)
     y1 = y0 + f(x0,y0)*h;
     x0 = x0 + h;
-    y0 = y1;
+    y0=y1;
+    
 end
 
 fprintf('ans is %f ' , y1);
