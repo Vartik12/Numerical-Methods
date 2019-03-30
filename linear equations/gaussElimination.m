@@ -5,8 +5,7 @@ n = input('enter the order of n of nxn matrix ');
 A = input('enter the coefficient matrix of order nxn ');
 B = input('enter the matrix B of order nx1 ');
 C = [];
-i=0;
-j=0;
+
 
 for(i=1:n)
     for(j=1:n)

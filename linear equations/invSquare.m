@@ -8,15 +8,7 @@ C = [];
 i=0;
 j=0;
 
-for(i=1:n)
-    for(j=1:2*n)
-        if(j<n || j==n )
-      C(i,j) = A(i,j);
-        else 
-            C(i,j) = B(i,j-n);
-        end
-    end
-end
+C=[A B];
 
 for(i=1:(n-1))
     for(j=(i+1):n)

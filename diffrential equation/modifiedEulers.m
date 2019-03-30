@@ -8,7 +8,6 @@ x=input('enter value of x to be calculated ');
 h=input('enter value of h ');
 
 n = (x-x0)/h;
-
 for(i=1:n)
     y1 = y0 + f(x0,y0)*h;
     x1 = x0 + h;
